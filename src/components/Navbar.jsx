@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/home">
+        {/* <NavLink className="navbar-brand" to="/home">
           Home
         </NavLink>
         <NavLink className="navbar-brand" to="/signup">
@@ -13,7 +13,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink className="navbar-brand" to="/login">
           Log-In
-        </NavLink>
+        </NavLink> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -28,16 +28,31 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              {/* <a className="nav-link active" aria-current="page" href="#">
+              <NavLink className="nav-link" to="/home" >
                 Home
-              </a> */}
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
+              <NavLink className="nav-link" to="/login">
+                Login
+              </NavLink>
             </li>
-            <li className="nav-item dropdown">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/signup">
+                Sign-Up
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/event">
+                Event
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/state">
+                State
+              </NavLink>
+            </li>
+            {/* <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -72,7 +87,7 @@ const Navbar = () => {
               <a className="nav-link disabled" aria-disabled="true">
                 Disabled
               </a>
-            </li>
+            </li> */}
           </ul>
           <form className="d-flex" role="search">
             <input

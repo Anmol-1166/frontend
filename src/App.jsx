@@ -4,6 +4,8 @@ import Home from './components/Home';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import Navbar from './components/Navbar';
+import EventHandling from './components/EventHandling';
+import Statemanagement from './components/Statemanagement';
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
           <Route element={<Home />} path='/' />
           <Route element={<LogIn />} path='login' />
           <Route element={<SignUp />} path='signup' />
+          <Route element={<EventHandling />} path='event' />
+          <Route element={<Statemanagement />} path='state' />
         </Routes>
       </BrowserRouter>
       </div>

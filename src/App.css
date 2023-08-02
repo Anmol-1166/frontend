@@ -2,3 +2,8 @@
   color: red;
   background-color: aquamarine;
 }
+.nav-item .active{
+  font-weight: bold;
+  border-bottom:  2px solid crimson;
+  color: crimson;
+}
