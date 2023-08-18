@@ -7,3 +7,9 @@
   border-bottom:  2px solid crimson;
   color: crimson;
 }
+
+.list-back{
+  background-image: url("/public/tech.jpeg");
+  background-size: cover;
+  /* min-height: vh100; */
+}

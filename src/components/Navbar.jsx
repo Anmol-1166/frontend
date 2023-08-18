@@ -52,6 +52,21 @@ const Navbar = () => {
                 State
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/todo">
+                Todo-List
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/pl">
+                Product List
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/blog">
+                Blog
+              </NavLink>
+            </li>
             {/* <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"

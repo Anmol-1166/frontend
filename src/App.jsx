@@ -6,6 +6,9 @@ import SignUp from './components/SignUp';
 import Navbar from './components/Navbar';
 import EventHandling from './components/EventHandling';
 import Statemanagement from './components/Statemanagement';
+import TodoList from './components/TodoList';
+import ProductList from './components/ProductList';
+import Blog from './components/Blog';
 
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
           <Route element={<SignUp />} path='signup' />
           <Route element={<EventHandling />} path='event' />
           <Route element={<Statemanagement />} path='state' />
+          <Route element={<TodoList />} path='todo' />
+          <Route element={<ProductList />} path='pl' />
+          <Route element={<Blog />} path='blog' />
         </Routes>
       </BrowserRouter>
       </div>
