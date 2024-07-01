@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import useUserContext from "./userContext";
 
 const Navbar = () => {
+  
+  const [currentUser, setcurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem('user'))
+  );
+
+  const {loggedIn , logout} = useUserContext();
+
+  const showLoginOptions = () => {
+    if(currentUser !== null || loggedIn){
+      return <li className="nav-item">
+      <button className="btn btn-danger" onClick={logout} >
+        Log Out
+      </button>
+    </li>
+    }else{
+      return <>
+        <li className="nav-item">
+              <NavLink className="nav-link" to="/signup" >
+                Signup
+              </NavLink>
+            </li><li className="nav-item">
+              <NavLink className="nav-link" to="/login" >
+                Login
+              </NavLink>
+            </li>
+      </>
+    }
+  }
+
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -32,7 +63,7 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink className="nav-link" to="/login">
                 Login
               </NavLink>
@@ -41,7 +72,7 @@ const Navbar = () => {
               <NavLink className="nav-link" to="/signup">
                 Sign-Up
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <NavLink className="nav-link" to="/event">
                 Event
@@ -67,42 +98,12 @@ const Navbar = () => {
                 Blog
               </NavLink>
             </li>
-            {/* <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </li>
             <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li> */}
+              <NavLink className="nav-link" to="/manage">
+                Manage user
+              </NavLink>
+            </li>
+            {showLoginOptions()}
           </ul>
           <form className="d-flex" role="search">
             <input

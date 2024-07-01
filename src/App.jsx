@@ -9,6 +9,8 @@ import Statemanagement from './components/Statemanagement';
 import TodoList from './components/TodoList';
 import ProductList from './components/ProductList';
 import Blog from './components/Blog';
+import ManageUser from './components/Manageuser';
+import { UserProvider } from './components/userContext';
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
     <div>
       
       <BrowserRouter>
+      <UserProvider>
 
         {/* <Link to="/home">Home</Link>
         <Link to="/signup">Sign-Up</Link>
@@ -32,7 +35,9 @@ function App() {
           <Route element={<TodoList />} path='todo' />
           <Route element={<ProductList />} path='pl' />
           <Route element={<Blog />} path='blog' />
+          <Route element={<ManageUser />} path='manage' />
         </Routes>
+        </UserProvider>
       </BrowserRouter>
       </div>
   );
